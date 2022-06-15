@@ -22,5 +22,4 @@ app.get("/data", getStarWarsFilms)
 // https://www.omdbapi.com/?apikey=8e56ab22&s=star
 // want to console log data from async fetch
 
-
 module.exports = app;
