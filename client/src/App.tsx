@@ -1,5 +1,5 @@
 import Button from '@mui/material/Button';
-
+import MovieCardComponent from './components/MovieCardComponent';
 import React, { useEffect, useState } from 'react';
 
 function App() {
@@ -31,10 +31,7 @@ function App() {
 
     return (
         <div className="App">
-            <p>Title: {films.Title}</p>
-            <p>Rating: {films.Rated}</p>
-            <img src={films.Poster} alt="" />
-
+            <MovieCardComponent Title={films.Title} Rated={films.Rated} Poster={films.Poster}></MovieCardComponent>
             <Button variant='contained'>This is a button</Button>
         </div>
     );
