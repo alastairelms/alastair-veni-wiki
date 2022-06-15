@@ -1,11 +1,11 @@
 const express = require("express");
 const app = express();
 
-const getStarWarsFilms = async (request, response) => {
-    const url = `https://www.omdbapi.com/?apikey=8e56ab22&s=star`;
+const getFilmsSearch = async (request, response) => {
+    const url = `https://www.omdbapi.com/?apikey=8e56ab22&t=batman`;
 
     const result = await fetch(url).catch((error) =>
-        console.log("getStarWarsFilms error:", error)
+        console.log("getFilmsSearch error:", error)
     );
 
     const resultAsJson = await result.json();
@@ -16,7 +16,7 @@ app.get("/", (request, response) => {
 	response.status(200).send("Hello World");
 });
 
-app.get("/data", getStarWarsFilms)
+app.get("/data", getFilmsSearch)
 
 // star wars films object
 // https://www.omdbapi.com/?apikey=8e56ab22&s=star
