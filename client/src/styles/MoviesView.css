@@ -1,0 +1,7 @@
+.movies-container {
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+    width: 80vw;
+    border: 2px solid black;
+}

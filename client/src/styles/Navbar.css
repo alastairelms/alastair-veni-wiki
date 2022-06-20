@@ -1,0 +1,16 @@
+.navbar {
+    width: 100vw;
+    height: 40px;
+    border: 2px solid black;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links {
+    border: 2px solid black;
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+}

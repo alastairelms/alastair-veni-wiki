@@ -1,19 +1,23 @@
 import { FC } from "react";
+import "../styles/MovieCard.css"
 
 interface Film {
     Title: string,
     Rated: string,
     Poster: string,
+    Year: string
 }
 
-const MovieCardComponent: FC<Film> = ({Title, Rated, Poster}) => {    
+const MovieCard: FC<Film> = ({ Title, Rated, Poster, Year }) => {
     return (
         <div className="movie-card">
-            <p>Title: {Title}</p>
-            <p>Rating: {Rated}</p>
-            <img src={Poster} alt="" />
+            <div className="movie-desc">
+                <p>{Title} - <span>{Year}</span></p>
+                <p>Rated: {Rated}</p>
+            </div>
+            <img className="movie-image" src={Poster} alt={Title} />
         </div>
     )
 }
 
-export default MovieCardComponent;
+export default MovieCard;

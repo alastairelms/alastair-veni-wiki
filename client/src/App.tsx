@@ -1,13 +1,17 @@
-import Button from '@mui/material/Button';
-import MovieCard from './components/MovieCard';
 import React, { useEffect, useState } from 'react';
+// import MovieCard from './components/MovieCard';
+import Navbar from './components/Navbar';
+import Searchbar from './components/SearchBar';
+import "./App.css"
+import MoviesView from './components/MoviesView';
 
 function App() {
 
     const [films, setFilms] = useState({
         Title: "",
         Rated: "",
-        Poster: ""
+        Poster: "",
+        Year: ""
     });
 
     const getFilms = async () => {
@@ -31,8 +35,9 @@ function App() {
 
     return (
         <div className="App">
-            <MovieCard Title={films.Title} Rated={films.Rated} Poster={films.Poster}></MovieCard>
-            <Button variant='contained'>This is a button</Button>
+            <Navbar></Navbar>
+            <Searchbar></Searchbar>
+            <MoviesView films={films}></MoviesView>
         </div>
     );
 }
