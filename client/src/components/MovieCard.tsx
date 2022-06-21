@@ -1,23 +1,32 @@
-import { FC } from "react";
 import "../styles/MovieCard.css"
+import { gql, useQuery } from "@apollo/client";
 
-interface Film {
-    Title: string,
-    Rated: string,
-    Poster: string,
-    Year: string
-}
+const STAR_WARS_FILMS = gql`
+    query Query {
+        allFilms {
+            films {
+                title
+                director
+                releaseDate
+            }
+        }
+    }
+`
 
-const MovieCard: FC<Film> = ({ Title, Rated, Poster, Year }) => {
-    return (
-        <div className="movie-card">
+const MovieCard = () => {
+    const { loading, error, data } = useQuery(STAR_WARS_FILMS);
+
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error :(</p>;
+
+    return data.allFilms.films.map(({ title, director, releaseDate }: any) => (
+        <div className="movie-card" key={title}>
             <div className="movie-desc">
-                <p>{Title} - <span>{Year}</span></p>
-                <p>Rated: {Rated}</p>
+                <p>{title} - <span>{releaseDate}</span></p>
+                <p>Directed by: {director}</p>
             </div>
-            <img className="movie-image" src={Poster} alt={Title} />
         </div>
-    )
+    ));
 }
 
 export default MovieCard;
