@@ -1,5 +1,5 @@
 import "../styles/MoviesView.css"
-import MovieCard from "./MovieCard";
+import { MovieCard } from "./MovieCard";
 
 const MoviesView = () => {
     return (
