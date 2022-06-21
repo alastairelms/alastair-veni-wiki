@@ -5,6 +5,7 @@ import { MockedProvider } from "@apollo/client/testing";
 import { MovieCard, dateToYear, STAR_WARS_FILMS } from '../components/MovieCard';
 
 
+
 const mocks: any[] = [
     {
         request: {
@@ -67,7 +68,10 @@ describe('when displaying the home page', () => {
         );
 
         const tree = component.toJSON();
-        expect(tree.children).toContain('Loading...');
+        console.log(tree)
+        // if (!Array.isArray(tree)) {
+            expect(tree?.children).toContain('Loading...');
+        // }
     });
     
 })
