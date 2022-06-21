@@ -1,7 +1,7 @@
 import Navbar from './components/Navbar';
 import Searchbar from './components/SearchBar';
 import MoviesView from './components/MoviesView';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import "./App.css"
 
