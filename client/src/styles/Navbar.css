@@ -1,9 +1,10 @@
 .navbar {
     width: 100vw;
-    height: 40px;
+    height: auto;
     border: 2px solid black;
     padding: 5px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -12,5 +13,5 @@
     border: 2px solid black;
     width: 20%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
