@@ -49,6 +49,10 @@
     ]
   },
   "devDependencies": {
-    "@types/react-test-renderer": "^18.0.0"
+    "@types/react-test-renderer": "^18.0.0",
+    "msw": "^0.42.1"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }

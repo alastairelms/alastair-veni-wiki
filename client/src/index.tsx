@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import { ApolloProvider } from "@apollo/client";
+import { client } from '../src/client'
 
-const client = new ApolloClient({
-    uri: 'https://swapi-graphql.netlify.app/.netlify/functions/index',
-    cache: new InMemoryCache()
-});
+
+
+// const { worker } = require('./mocks/browser')
+// worker.start()
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -20,5 +20,3 @@ root.render(
         </ApolloProvider>,
     </React.StrictMode>
 );
-
-reportWebVitals();
