@@ -1,19 +1,18 @@
-import React from 'react';
-import Navbar from './components/Navbar';
-import Searchbar from './components/SearchBar';
-import MoviesView from './components/MoviesView';
+import React from "react";
+import Navbar from "./components/Navbar";
+import Searchbar from "./components/SearchBar";
+import MoviesView from "./components/MoviesView";
 
-import "./App.css"
+// import "./App.css"
 
 function App() {
-
-    return (
-        <div className="App">
-            <Navbar></Navbar>
-            <Searchbar></Searchbar>
-            <MoviesView></MoviesView>
-        </div>
-    );
+	return (
+		<>
+			<Navbar></Navbar>
+			<Searchbar></Searchbar>
+			<MoviesView></MoviesView>
+		</>
+	);
 }
 
 export default App;

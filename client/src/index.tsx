@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import { ApolloProvider } from "@apollo/client";
 import { client } from '../src/client'
+import { ChakraProvider } from '@chakra-ui/react';
 
 
 
@@ -16,7 +17,9 @@ const root = ReactDOM.createRoot(
 root.render(
     <React.StrictMode>
         <ApolloProvider client={client}>
-            <App />
+            <ChakraProvider>
+                <App />
+            </ChakraProvider>
         </ApolloProvider>,
     </React.StrictMode>
 );

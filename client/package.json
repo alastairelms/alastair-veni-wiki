@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.6.8",
+    "@chakra-ui/react": "^2.2.1",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "@mui/material": "^5.8.4",
@@ -14,6 +15,7 @@
     "@types/node": "^16.11.40",
     "@types/react": "^18.0.12",
     "@types/react-dom": "^18.0.5",
+    "framer-motion": "^6.3.12",
     "graphql": "^16.5.0",
     "jest": "^28.1.1",
     "jest-dom": "^4.0.0",
