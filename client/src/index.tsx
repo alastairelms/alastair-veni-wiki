@@ -12,6 +12,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { Movies } from './pages/Movies';
 import { Planets } from './pages/Planets';
 import { Species } from './pages/Species';
+import { MovieShowPage } from './pages/MovieShowPage';
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -25,6 +26,7 @@ root.render(
                     <Routes>
                         <Route path='/' element={<Home />}/>
                         <Route path='/movies' element={<Movies />}/>
+                        <Route path='/movies/:id' element={<MovieShowPage />}/>
                         <Route path='/planets' element={<Planets />}/>
                         <Route path='/species' element={<Species />}/>
                     </Routes>
