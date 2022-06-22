@@ -1,17 +1,14 @@
 import React from "react";
 import Navbar from "./components/Navbar";
-import Searchbar from "./components/SearchBar";
-import MoviesView from "./components/MoviesView";
-
-// import "./App.css"
+import MoviesView from "./components/MainContentView";
+import { HStack } from "@chakra-ui/react";
 
 function App() {
 	return (
-		<>
-			<Navbar></Navbar>
-			<Searchbar></Searchbar>
-			<MoviesView></MoviesView>
-		</>
+		<HStack>
+			<Navbar />
+			<MoviesView />			
+		</HStack>
 	);
 }
 

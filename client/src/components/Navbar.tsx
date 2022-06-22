@@ -1,15 +1,26 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-// import "../styles/Navbar.css"
-import { Button, Heading } from '@chakra-ui/react'
-import { HStack } from '@chakra-ui/react'
+import { FaHome } from "react-icons/fa";
+
+import { VStack, Link, List, ListItem, Icon } from "@chakra-ui/react";
 
 const Navbar = () => {
-    return (
-        <HStack p={3}>
-            <Heading mr={5} size='xl'>Star Wars Wiki</Heading>
-            <Button size="xs" colorScheme='blue'>Home</Button>
-        </HStack>
-    )
-}
+	return (
+		<VStack align="left" p={5}>
 
+			<List spacing={5}>
+				<ListItem>
+                    <Link><Icon as={FaHome} w={5} h={5}/></Link>
+				</ListItem>
+				<ListItem>
+					<Link>Movies</Link>
+				</ListItem>
+				<ListItem>
+					<Link>Planets</Link>
+				</ListItem>
+				<ListItem>
+					<Link>Species</Link>
+				</ListItem>
+			</List>
+		</VStack>
+	);
+};
 export default Navbar;

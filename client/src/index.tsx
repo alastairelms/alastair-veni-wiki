@@ -20,6 +20,6 @@ root.render(
             <ChakraProvider>
                 <App />
             </ChakraProvider>
-        </ApolloProvider>,
+        </ApolloProvider>
     </React.StrictMode>
 );
