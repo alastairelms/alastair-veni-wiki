@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom'
-import { dateToYear, MovieCard } from '../components/MovieCard';
+import { dateToYear, CardGenerator } from '../components/CardGenerator';
 import { render, screen } from '@testing-library/react';
 import { client } from '../client'
 import { ApolloProvider } from '@apollo/client';
@@ -16,7 +16,7 @@ describe('MovieCard component', () => {
     it('displays "Loading..." when waiting on GraphQL response', () => {
         render(
             <ApolloProvider client={client}>
-                <MovieCard />
+                <CardGenerator />
             </ApolloProvider>
         )
         const card = screen.getByText(/Loading.../)
@@ -25,7 +25,7 @@ describe('MovieCard component', () => {
     it('renders the Movie title', async () => {
         render(
             <ApolloProvider client={client}>
-                <MovieCard />
+                <CardGenerator />
             </ApolloProvider>
         )
         const movieTitle = await screen.findByText(/A New Hope/)

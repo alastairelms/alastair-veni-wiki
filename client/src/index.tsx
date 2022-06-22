@@ -1,14 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
+import {
+	BrowserRouter,
+	Routes,
+	Route,
+  } from "react-router-dom";
+import { App } from './App';
 import { ApolloProvider } from "@apollo/client";
 import { client } from '../src/client'
 import { ChakraProvider } from '@chakra-ui/react';
-
-
-
-// const { worker } = require('./mocks/browser')
-// worker.start()
+import { Movies } from './pages/Movies';
+import { Planets } from './pages/Planets';
+import { Species } from './pages/Species';
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -16,10 +19,17 @@ const root = ReactDOM.createRoot(
 
 root.render(
     <React.StrictMode>
-        <ApolloProvider client={client}>
+            <ApolloProvider client={client}>
             <ChakraProvider>
-                <App />
+                <BrowserRouter>
+                    <Routes>
+                        <Route path='/' element={<App />}/>
+                        <Route path='/movies' element={<Movies />}/>
+                        <Route path='/planets' element={<Planets />}/>
+                        <Route path='/species' element={<Species />}/>
+                    </Routes>
+                </BrowserRouter>
             </ChakraProvider>
-        </ApolloProvider>
+            </ApolloProvider>
     </React.StrictMode>
 );

@@ -1,18 +1,11 @@
 import "../styles/MoviesView.css";
-import { Heading, VStack } from "@chakra-ui/react";
-import { MovieCard } from "./MovieCard";
+import { SimpleGrid } from "@chakra-ui/react";
+import { CardGenerator } from "./CardGenerator";
 
-const MainContentView = () => {
+export const MainContentView = () => {
 	return (
-		<>
-			<VStack alignItems="left" pt={3}>
-				<Heading>Star Wars Wiki</Heading>
-				<div className="movies-container">
-					<MovieCard />
-				</div>
-			</VStack>
-		</>
+		<SimpleGrid columns={3} p={5}>
+			<CardGenerator />
+		</SimpleGrid>
 	);
 };
-
-export default MainContentView;
