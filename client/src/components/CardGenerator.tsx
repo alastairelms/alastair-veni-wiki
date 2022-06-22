@@ -1,6 +1,6 @@
 import "../styles/MovieCard.css"
 import { gql, useQuery } from "@apollo/client";
-import { GridItem } from "@chakra-ui/react";
+import { GridItem, Text } from "@chakra-ui/react";
 
 export const STAR_WARS_FILMS = gql`
     query StarWarsFilms {
@@ -32,8 +32,8 @@ export const CardGenerator = () => {
 
     return data.allFilms.films.map(({ title, director, releaseDate }: MovieCardProps) => (
         <GridItem p={5} w='100%' h='auto' border='1px white solid'>
-            <p>{title} - <span>{dateToYear(releaseDate)}</span></p>
-            <p>Directed by: {director}</p>            
+            <Text>{title} - <span>{dateToYear(releaseDate)}</span></Text>
+            <Text>Directed by: {director}</Text>            
         </GridItem>
 
     ));

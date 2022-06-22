@@ -1,10 +1,9 @@
 import React from "react";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer"
-import { MainContentView } from "./components/MainContentView";
-import { Grid, GridItem, Heading } from "@chakra-ui/react";
+import { Grid, GridItem, Heading, Text } from "@chakra-ui/react";
 
-export function App() {
+export function Home() {
 	return (
 		<Grid
 			templateAreas={`"header header"
@@ -14,16 +13,16 @@ export function App() {
 			gridTemplateColumns={"auto 1fr"}
 			h="100vh"
 		>
-			<GridItem borderBottom='3px solid white' area={"header"}>
+			<GridItem borderBottom='1px solid white' area={"header"}>
 				<Heading p={5}>Star Wars Wiki</Heading>
 			</GridItem>
-			<GridItem borderRight='3px solid white' area={"nav"}>
+			<GridItem borderRight='1px solid white' area={"nav"}>
 				<Navbar />
 			</GridItem>
 			<GridItem area={"main"}>
-				<MainContentView />
+				<Text>Welcome</Text>
 			</GridItem>
-			<GridItem borderTop='3px solid white' area={"footer"}>
+			<GridItem borderTop='1px solid white' area={"footer"}>
 				<Footer />
 			</GridItem>
 		</Grid>

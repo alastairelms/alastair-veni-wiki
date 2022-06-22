@@ -5,7 +5,7 @@ import {
 	Routes,
 	Route,
   } from "react-router-dom";
-import { App } from './App';
+import { Home } from './App';
 import { ApolloProvider } from "@apollo/client";
 import { client } from '../src/client'
 import { ChakraProvider } from '@chakra-ui/react';
@@ -23,7 +23,7 @@ root.render(
             <ChakraProvider>
                 <BrowserRouter>
                     <Routes>
-                        <Route path='/' element={<App />}/>
+                        <Route path='/' element={<Home />}/>
                         <Route path='/movies' element={<Movies />}/>
                         <Route path='/planets' element={<Planets />}/>
                         <Route path='/species' element={<Species />}/>
