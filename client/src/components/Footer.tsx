@@ -1,7 +1,11 @@
-import { Text } from "@chakra-ui/react";
+import { HStack, Icon, Link, Text } from "@chakra-ui/react";
+import { FaGithub } from "react-icons/fa";
 
 export const Footer = () => (
-	<Text p={3} align="right">
-		Made by Alastair and Veni
-	</Text>
+	<Link
+		href="https://github.com/alastairelms/alastair-veni-wiki"
+		target="_blank"
+	>
+		<Icon w={7} h={7} m={3} as={FaGithub} />
+	</Link>
 );

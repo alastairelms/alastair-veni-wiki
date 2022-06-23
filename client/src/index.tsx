@@ -1,16 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Home } from "./App";
+// import { Home } from "./Home";
 import { ApolloProvider } from "@apollo/client";
 import { client } from "../src/client";
 import { ChakraProvider } from "@chakra-ui/react";
-import { Movies } from "./pages/Movies";
-import { Planets } from "./pages/Planets";
-import { Species } from "./pages/Species";
+// import { Movies } from "./pages/Movies";
+// import { Planets } from "./pages/Planets";
+// import { Species } from "./pages/Species";
 import { MovieShowPage } from "./pages/MovieShowPage";
 import { PlanetsShowPage } from "./pages/PlanetsShowPage";
 import { SpeciesShowPage } from "./pages/SpeciesShowPage";
+import { LayoutContainer } from "./components/LayoutContainer";
+import { HomeContentView } from "./components/HomeContentView";
+import { MoviesContentView } from "./components/MoviesContentView";
+import { PlanetsContentView } from "./components/PlanetsContentView";
+import { SpeciesContentView } from "./components/SpeciesContentView";
 
 const root = ReactDOM.createRoot(
 	document.getElementById("root") as HTMLElement
@@ -22,13 +27,13 @@ root.render(
 			<ChakraProvider>
 				<BrowserRouter>
 					<Routes>
-						<Route path="/" element={<Home />} />
-						<Route path="/movies" element={<Movies />} />
-						<Route path="/movies/:id" element={<MovieShowPage />} />
-						<Route path="/planets" element={<Planets />} />
-						<Route path="/planets/:id" element={<PlanetsShowPage />} />
-						<Route path="/species" element={<Species />} />
-						<Route path="/species/:id" element={<SpeciesShowPage />} />
+						<Route path="/" element={<LayoutContainer main={<HomeContentView />} />} />
+						<Route path="/movies" element={<LayoutContainer main={<MoviesContentView />} />} />
+						<Route path="/movies/:id" element={<LayoutContainer main={<MovieShowPage />} />} />
+						<Route path="/planets" element={<LayoutContainer main={<PlanetsContentView />} />} />
+						<Route path="/planets/:id" element={<LayoutContainer main={<PlanetsShowPage />} />} />
+						<Route path="/species" element={<LayoutContainer main={<SpeciesContentView />} />} />
+						<Route path="/species/:id" element={<LayoutContainer main={<SpeciesShowPage />} />} />
 					</Routes>
 				</BrowserRouter>
 			</ChakraProvider>

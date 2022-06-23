@@ -1,9 +1,9 @@
 import React from "react";
-import { Navbar } from "./components/Navbar";
-import { Footer } from "./components/Footer";
-import { Grid, GridItem, Heading, Text } from "@chakra-ui/react";
+import { Navbar } from ".//Navbar";
+import { Footer } from "./Footer";
+import { Grid, GridItem, Heading } from "@chakra-ui/react";
 
-export function Home() {
+export const LayoutContainer = ({ main }: any) => {
 	return (
 		<Grid
 			templateAreas={`"header header"
@@ -20,7 +20,7 @@ export function Home() {
 				<Navbar />
 			</GridItem>
 			<GridItem area={"main"}>
-				<Text>Welcome</Text>
+                {main}
 			</GridItem>
 			<GridItem borderTop="1px solid white" area={"footer"}>
 				<Footer />
