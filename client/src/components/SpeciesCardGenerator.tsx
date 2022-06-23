@@ -1,5 +1,5 @@
 import { gql, useQuery } from "@apollo/client";
-import { GridItem, Text } from "@chakra-ui/react";
+import { GridItem, Spinner, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 export const GET_SPECIES = gql`
@@ -29,7 +29,7 @@ export const SpeciesCardGenerator = () => {
 
 	console.log({ loading, error, data });
 
-	if (loading) return <p>Loading...</p>;
+	if (loading) return <Spinner />;
 	if (error) return <p>Error :</p>;
 
 	return data.allSpecies.species.map(

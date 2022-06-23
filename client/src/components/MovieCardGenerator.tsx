@@ -1,9 +1,9 @@
 import { gql, useQuery } from "@apollo/client";
-import { GridItem, Text } from "@chakra-ui/react";
+import { GridItem, Spinner, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 export const GET_FILMS = gql`
-	query StarWarsFilms {
+	query GetFilms {
 		allFilms {
 			films {
 				title
@@ -30,7 +30,7 @@ export const MovieCardGenerator = () => {
 
 	console.log({ loading, error, data });
 
-	if (loading) return <p>Loading...</p>;
+	if (loading) return <Spinner />;
 	if (error) return <p>Error :</p>;
 
 	return data.allFilms.films.map(
@@ -45,7 +45,7 @@ export const MovieCardGenerator = () => {
 			>
 				<Link to={`/movies/${id}`}>
 					<Text>
-						{title} - <span>{dateToYear(releaseDate)}</span>
+						{title} - {dateToYear(releaseDate)}
 					</Text>
 					<Text>Directed by: {director}</Text>
 				</Link>

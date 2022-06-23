@@ -1,7 +1,6 @@
 import { graphql } from "msw";
 export const handlers = [
-	graphql.query("StarWarsFilms", (req, res, ctx) => {
-		console.log("Test");
+	graphql.query("GetFilms", (req, res, ctx) => {
 		return res(
 			ctx.data({
 				allFilms: {

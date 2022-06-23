@@ -15,7 +15,7 @@ describe("when displaying the home page", () => {
 	});
 });
 
-describe("MovieCard component", () => {
+describe("MovieCardGenerator component", () => {
 	it('displays "Loading..." when waiting on GraphQL response', () => {
 		render(
 			<ApolloProvider client={client}>
