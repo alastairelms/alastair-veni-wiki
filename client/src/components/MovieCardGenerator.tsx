@@ -28,8 +28,6 @@ interface MovieCardProps {
 export const MovieCardGenerator = () => {
 	const { loading, error, data } = useQuery(GET_FILMS);
 
-	console.log({ loading, error, data });
-
 	if (loading) return <Spinner />;
 	if (error) return <p>Error :</p>;
 
@@ -44,10 +42,10 @@ export const MovieCardGenerator = () => {
 				key={id}
 			>
 				<Link to={`/movies/${id}`}>
+					<Text>{title}</Text>
 					<Text>
-						{title} - {dateToYear(releaseDate)}
+						Directed by: {director} - {dateToYear(releaseDate)}
 					</Text>
-					<Text>Directed by: {director}</Text>
 				</Link>
 			</GridItem>
 		)
