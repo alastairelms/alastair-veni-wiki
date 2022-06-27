@@ -33,21 +33,22 @@ export const MovieCardGenerator = () => {
 
 	return data.allFilms.films.map(
 		({ title, director, releaseDate, id }: MovieCardProps) => (
-			<GridItem
-				p={5}
-				w="100%"
-				h="auto"
-				border="1px white solid"
-				id={id}
-				key={id}
-			>
-				<Link to={`/movies/${id}`}>
+			<Link to={`/movies/${id}`}>
+				<GridItem
+					p={5}
+					w="100%"
+					h="auto"
+					border="1px black solid"
+					rounded="lg"
+					id={id}
+					key={id}
+				>
 					<Text>{title}</Text>
 					<Text>
 						Directed by: {director} - {dateToYear(releaseDate)}
 					</Text>
-				</Link>
-			</GridItem>
+				</GridItem>
+			</Link>
 		)
 	);
 };

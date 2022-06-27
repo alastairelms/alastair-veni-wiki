@@ -1,24 +1,59 @@
-import { FaHome } from "react-icons/fa";
-import { VStack, List, ListItem, Icon } from "@chakra-ui/react";
+import { VStack, List, ListItem, Text, Heading } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 export const Navbar = () => {
 	return (
-		<VStack align="left" p={3}>
-			<List p={3} spacing={5}>
+		<VStack p={3}>
+			<Heading p={5} color="#0070f3" fontWeight="hairline">
+				<Link to="/">
+					star <br />
+					wars <br />
+					wiki
+				</Link>
+			</Heading>
+
+			<List spacing={5}>
 				<ListItem>
-					<Link to="/">
-						<Icon as={FaHome} w={5} h={5} />
+					<Link to="/movies">
+						<Text
+							fontWeight="bold"
+							_hover={{
+								borderColor: "#0070f3",
+								color: "#0070f3",
+								fontWeight: "bold",
+							}}
+						>
+							Movies
+						</Text>
 					</Link>
 				</ListItem>
 				<ListItem>
-					<Link to="/movies">Movies</Link>
+					<Link to="/planets">
+						<Text
+							fontWeight="bold"
+							_hover={{
+								borderColor: "#0070f3",
+								color: "#0070f3",
+								fontWeight: "bold",
+							}}
+						>
+							Planets
+						</Text>
+					</Link>
 				</ListItem>
 				<ListItem>
-					<Link to="/planets">Planets</Link>
-				</ListItem>
-				<ListItem>
-					<Link to="/species">Species</Link>
+					<Link to="/species">
+						<Text
+							fontWeight="bold"
+							_hover={{
+								borderColor: "#0070f3",
+								color: "#0070f3",
+								fontWeight: "bold",
+							}}
+						>
+							Species
+						</Text>
+					</Link>
 				</ListItem>
 			</List>
 		</VStack>

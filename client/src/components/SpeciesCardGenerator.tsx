@@ -44,7 +44,8 @@ export const SpeciesCardGenerator = () => {
 				p={5}
 				w="100%"
 				h="auto"
-				border="1px white solid"
+				border="1px black solid"
+				rounded="lg"
 				id={id}
 				key={id}
 			>

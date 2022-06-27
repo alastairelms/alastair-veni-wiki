@@ -1,8 +1,5 @@
 import { gql } from "@apollo/client";
-import { Grid, GridItem, Heading, Text } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
-import { Footer } from "../components/Footer";
-import { Navbar } from "../components/Navbar";
 
 const GET_FILMS = gql`
 	query GetFilms {

@@ -1,4 +1,4 @@
-import { HStack, Icon, Link, Text } from "@chakra-ui/react";
+import { Icon, Link } from "@chakra-ui/react";
 import { FaGithub } from "react-icons/fa";
 
 export const Footer = () => (
