@@ -1,7 +1,7 @@
 import { gql, useQuery } from "@apollo/client";
-import { Spinner } from "@chakra-ui/react";
-import { useParams } from "react-router-dom";
-import { GET_FILMS } from "../components/MovieCardGenerator";
+import { GridItem, Spinner, Text } from "@chakra-ui/react";
+import { Link, useParams } from "react-router-dom";
+import { dateToYear, GET_FILMS } from "../components/MovieCardGenerator";
 import { GET_PLANETS } from "../components/PlanetsCardGenerator";
 import { Film } from "./MovieShowPage";
 
@@ -34,7 +34,7 @@ export const PlanetsShowPage = () => {
         { loading: planetsLoading, data: planetsData }
     ] = QueryMultiple()
 
-    if ( filmsLoading || planetsLoading ) return <Spinner />;
+    if (filmsLoading || planetsLoading) return <Spinner />;
 
     const planet = planetsData.allPlanets.planets.find((planet: Planet) => planet.id === id)
     console.log(planet)
@@ -52,12 +52,36 @@ export const PlanetsShowPage = () => {
     })
     console.log("films with planet!", filmsToShow)
 
+    return (
 
-    return <>
-        <p>Planet Show Page - {planet.name}</p>
-        <br />
-        <p>Population - {planet.population}</p>
-        <br />
-        <p>Diameter - {planet.diameter}</p>
-    </>
+        <>
+            <p>Planet Show Page - {planet.name}</p>
+            <br />
+            <p>Population - {planet.population}</p>
+            <br />
+            <p>Diameter - {planet.diameter}</p>
+            {filmsToShow.map(
+                ({ title, director, releaseDate, id }: Film) => (
+                    <Link to={`/movies/${id}`}>
+                        <GridItem
+                            p={5}
+                            w="100%"
+                            h="auto"
+                            border="1px black solid"
+                            rounded="lg"
+                            id={id}
+                            key={id}
+                        >
+                            <Text>{title}</Text>
+                            <Text>
+                                Directed by: {director} - {dateToYear(releaseDate)}
+                            </Text>
+                        </GridItem>
+                    </Link>
+                )
+            )
+            }
+        </>
+
+    )
 };
