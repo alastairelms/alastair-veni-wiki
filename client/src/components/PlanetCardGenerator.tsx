@@ -24,7 +24,7 @@ export const GET_PLANETS = gql`
     }
 `;
 
-export const PlanetsCardGenerator = () => {
+export const PlanetCardGenerator = () => {
 	const { loading, error, data } = useQuery(GET_PLANETS);
 
 	if (loading) return <Spinner />;

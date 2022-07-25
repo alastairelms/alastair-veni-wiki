@@ -1,4 +1,6 @@
-import { VStack, List, ListItem, Text, Heading } from "@chakra-ui/react";
+import { VStack, List, ListItem, Text, Heading, Image } from "@chakra-ui/react";
+import logo from "../assets/starwar.png"
+import "../styles/Navbar.css"
 import { Link } from "react-router-dom";
 
 export const Navbar = () => {
@@ -6,9 +8,7 @@ export const Navbar = () => {
 		<VStack p={3}>
 			<Heading p={5} color="#0070f3" fontWeight="hairline">
 				<Link to="/">
-					star <br />
-					wars <br />
-					wiki
+                    <Image src={logo} alt="Star Wars Logo" id="nav-logo" />
 				</Link>
 			</Heading>
 
