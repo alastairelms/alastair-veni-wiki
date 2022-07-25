@@ -1,39 +1,37 @@
 import { gql, useQuery } from "@apollo/client";
 import { GridItem, Spinner, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import { Planet } from "../pages/PlanetsShowPage";
 
 export const GET_PLANETS = gql`
-	query GetPlanets {
-		allPlanets {
-			planets {
-				name
-				diameter
-				population
-				gravity
-				id
-			}
-		}
-	}
+    query Planets {
+        allPlanets {
+            planets {
+                id
+                name
+                diameter
+                terrains
+                orbitalPeriod
+                population
+                gravity
+                filmConnection {
+                    films {
+                        id
+                    }
+                }
+            }
+        }
+    }
 `;
-
-interface PlanetCardProps {
-	name: string;
-	diameter: number;
-	population: number;
-	gravity: string;
-	id: string;
-}
 
 export const PlanetsCardGenerator = () => {
 	const { loading, error, data } = useQuery(GET_PLANETS);
-
-	console.log({ loading, error, data });
 
 	if (loading) return <Spinner />;
 	if (error) return <p>Error :</p>;
 
 	return data.allPlanets.planets.map(
-		({ name, diameter, population, gravity, id }: PlanetCardProps) => (
+		({ name, diameter, population, gravity, id }: Planet) => (
 			<GridItem
 				p={5}
 				w="100%"

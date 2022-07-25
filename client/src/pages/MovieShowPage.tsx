@@ -1,34 +1,17 @@
 import { gql, useQuery } from "@apollo/client";
 import { Spinner } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
+import { GET_FILMS } from "../components/MovieCardGenerator";
 
-const GET_FILMS = gql`
-	query GetFilms {
-		allFilms {
-			films {
-				created
-				director
-				edited
-				episodeID
-				id
-				openingCrawl
-				releaseDate
-				title
-				producers
-			}
-		}
-	}
-`;
-interface Film {
+export interface Film {
+	title: string;
+	director: string;
+	releaseDate: string;
+	id: string;
     created: string;
-    director: string;
     edited: string;
-    episodeID: string;
-    id: string;
+    episodeID: number;
     openingCrawl: string;
-    releaseDate: string;
-    title: string;
-    producers: string;
 }
 
 export const MovieShowPage = () => {
